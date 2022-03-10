@@ -1,0 +1,40 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body{
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/work-2.jpg');
+	background-size: cover;
+	background-position: top;
+	color: #fff;
+}
+
+.menubar{
+	float: right;
+}
+
+.container{
+	margin-top: 30px;
+}
+
+p{
+	font-size: 20px;
+}
+
+button{
+	width: 100%;
+	border-radius: 20%;
+}
+.me:hover{
+	background-color: #005af8;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	width: 80px;
+	margin-right: 74px;
+}
+
+.you:hover{
+}

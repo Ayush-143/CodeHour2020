@@ -1,0 +1,72 @@
+<?php
+
+  include('../config.php');
+
+  $CollegeQuery = "SELECT * FROM collegedetails";
+  $success = mysqli_query($con,$CollegeQuery);
+  $p_count = mysqli_num_rows($success);
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COLLEGES</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../assets/images/univer.jpg'); background-size: cover;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="../index.php"><img src="../assets/images/code.png" width="250px" height="40px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse menubar" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="about.php">About Us</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="aboutus.php">Contact</a>
+      </li>
+    </ul><br><br>
+    <a href="includes/register.php" class="me">
+    <button type="button" style=" width: 75px; margin-right: 75px; padding: 5px; border: 1px solid #005fa8; border-radius: 5px; background-color: #fff; color: #005fa8;">Register</button></a>
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 100px;">
+ <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">S.NO</th>
+      <th scope="col">COLLEGE NAME</th>
+    </tr>
+  </thead>
+  <tbody>
+ <?php
+
+      while($p_count!=0){
+        $row = mysqli_fetch_array($success);
+        echo "
+
+        <tr style='color: #fff;'>
+        <td>".$row[0]."</td>
+        <td>".$row[1]."</td>
+
+        </tr>
+        ";
+        $p_count--;
+      }
+
+      ?>
+  </tbody>
+</table>
+</div>
+</body>
+</html>
